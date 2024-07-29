@@ -3,9 +3,10 @@ import cors from "cors";
 import express from "express";
 import mongoose from "mongoose";
 import UserRoute from "./router/user.route.js"
+import config from "./config.js";
 const app = express();
 
-mongoose.connect("mongodb+srv://krishna13neema:NlyuD8HnrzrJrSVZ@cluster0.ajwieco.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+mongoose.connect(config.dbConnectionUrl);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
